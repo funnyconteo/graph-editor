@@ -40,9 +40,9 @@
       if(window.location.href.includes('#')) {
         await localStorage.setItem('id_token', this.getParameterByName('id_token'))
       }
-      if(!this.token) {
-        this.$router.push({name: "signIn"})
-      }
+      // if(!this.token) {
+      //   this.$router.push({name: "signIn"})
+      // }
     }
   };
 </script>
