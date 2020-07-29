@@ -1,0 +1,230 @@
+[
+  {
+    "@graph": [
+      {
+        "@id": "lego:ValuesPipeline",
+        "lego:pipeName": [
+          {
+            "@value": "Values"
+          }
+        ],
+        "lego:pipeTokenList": [
+          {
+            "@value": "штука"
+          },
+          {
+            "@value": "обыкновенный"
+          }
+        ]
+      },
+      {
+        "@id": "lego:SharesRule",
+        "lego:RuleName": [
+          {
+            "@value": "Правило для количества акций"
+          }
+        ],
+        "lego:pipelineOrder": [
+          {
+            "@value": "Shares; Values"
+          }
+        ]
+      },
+      {
+        "@id": "lego:CapitalRule",
+        "lego:RuleName": [
+          {
+            "@value": "Правило для уставного капитала"
+          }
+        ],
+        "lego:pipelineOrder": [
+          {
+            "@value": "СapitalPipeline; Rubles"
+          }
+        ]
+      },
+      {
+        "@id": "lego:СapitalPipeline",
+        "lego:pipeName": [
+          {
+            "@value": "СapitalPipeline"
+          }
+        ],
+        "lego:pipeTokenList": [
+          {
+            "@value": "составляет"
+          }
+        ]
+      },
+      {
+        "@id": "lego:Capital",
+        "lego:attrName": [
+          {
+            "@value": "Уставный капитал"
+          }
+        ],
+        "lego:hasMorphPipeline": [
+          {
+            "@id": "lego:ValuesPipeline"
+          },
+          {
+            "@id": "lego:OneShareCostPipeline"
+          },
+          {
+            "@id": "lego:OneSharePipeline"
+          },
+          {
+            "@id": "lego:SharesPipeline"
+          },
+          {
+            "@id": "lego:СapitalPipeline"
+          },
+          {
+            "@id": "lego:RublesPipeline"
+          },
+          {
+            "@id": "lego:AdditionalsharesPipeline"
+          }
+        ],
+        "lego:hasRulesRE": [
+          {
+            "@id": "lego:RegExp"
+          }
+        ],
+        "lego:hasYargyRule": [
+          {
+            "@id": "lego:CapitalRule"
+          },
+          {
+            "@id": "lego:SharesRule"
+          },
+          {
+            "@id": "lego:ShareCostRule"
+          },
+          {
+            "@id": "lego:AdditionalSharesRule"
+          }
+        ]
+      },
+      {
+        "@id": "lego:RublesPipeline",
+        "lego:pipeName": [
+          {
+            "@value": "Rubles"
+          }
+        ],
+        "lego:pipeTokenList": [
+          {
+            "@value": "рубль"
+          }
+        ]
+      },
+      {
+        "@id": "lego:SharesPipeline",
+        "lego:pipeName": [
+          {
+            "@value": "Shares"
+          }
+        ],
+        "lego:pipeTokenList": [
+          {
+            "@value": "разделён на"
+          },
+          {
+            "@value": "в количестве"
+          }
+        ]
+      },
+      {
+        "@id": "lego:AdditionalSharesRule",
+        "lego:RuleName": [
+          {
+            "@value": "Правило для дополнительного количества акций"
+          }
+        ],
+        "lego:pipelineOrder": [
+          {
+            "@value": "Additional shares; Values"
+          }
+        ]
+      },
+      {
+        "@id": "lego:ShareCostRule",
+        "lego:RuleName": [
+          {
+            "@value": "Правило для цены одной акции"
+          }
+        ],
+        "lego:pipelineOrder": [
+          {
+            "@value": "One share; One share cost"
+          }
+        ]
+      },
+      {
+        "@id": "lego:Protocol",
+        "lego:hasAttribute": [
+          {
+            "@id": "lego:Capital"
+          }
+        ]
+      },
+      {
+        "@id": "lego:RegExp",
+        "lego:RegExpoList": [
+          {
+            "@value": "r'(Д?д?ополнитель)'"
+          }
+        ],
+        "lego:RegName": [
+          {
+            "@value": "RegExpAdditional"
+          }
+        ]
+      },
+      {
+        "@id": "lego:OneSharePipeline",
+        "lego:pipeName": [
+          {
+            "@value": "One share"
+          }
+        ],
+        "lego:pipeTokenList": [
+          {
+            "@value": "номинальной стоимость"
+          }
+        ]
+      },
+      {
+        "@id": "lego:AdditionalsharesPipeline",
+        "lego:pipeName": [
+          {
+            "@value": "Additional shares"
+          }
+        ],
+        "lego:pipeTokenList": [
+          {
+            "@value": "акция"
+          },
+          {
+            "@value": "в количестве"
+          }
+        ]
+      },
+      {
+        "@id": "lego:OneShareCostPipeline",
+        "lego:pipeName": [
+          {
+            "@value": "One share cost"
+          }
+        ],
+        "lego:pipeTokenList": [
+          {
+            "@value": "рубль каждая"
+          }
+        ]
+      }
+    ],
+    "@id": "http://localhost:3030/ds/data/lego"
+  }
+]
