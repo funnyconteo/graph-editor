@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "d3-force": "^2.0.1",
-    "jsonld": "^3.1.1",
+    "jsonld": "^8.1.0",
     "jwt-decode": "^2.2.0",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
